@@ -4,8 +4,9 @@ export const GETS_POSTS = "GET_POSTS";
 
 export const getPosts = () => {
   return (dispatch) => {
-    return axios.get("http://localhost:3000/posts").then((res) => {
-      console.log(res);
+    return axios.get("http://localhost:3005/posts").then((res) => {
+      console.log("===<>", res.data);
+      dispatch({ type: GETS_POSTS, payload: res.data });
     });
   };
 };

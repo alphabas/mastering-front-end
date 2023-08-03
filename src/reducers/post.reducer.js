@@ -1,5 +1,12 @@
+import { GETS_POSTS } from "../actions/post.action";
+
 const initialState = {};
 
 export default function postReducer(state = initialState, action) {
-  return state;
+  switch (action.type) {
+    case GETS_POSTS:
+      return action.payload;
+    default:
+      return state;
+  }
 }
